@@ -1,0 +1,12 @@
+<p>This is the countries view.</p>
+
+<select ng-model="selectedCountry" ng-options="country as country +'('+cities.length+')' for (country, cities) in countries" ng-blur="countrySelected()"></select>
+<select ng-model="selectedCity" ng-options="city as city + ' - ' + selectedCountry for city in cities" ng-show="selectedCountry"></select>
+<button ng-click="addCity()" ng-show="selectedCity" class="btn btn-info">I've been there</button>
+
+<div>
+  You've been to:
+  <ul>
+    <li ng-bind="city" ng-repeat="city in visitedCities"></li>
+  </ul>
+</div>

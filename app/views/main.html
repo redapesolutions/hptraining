@@ -1,0 +1,33 @@
+<div class="row marketing" ng-init="">
+  <select ng-model="currencyName" ng-options="currencyObject.rate as currencyObject.name + ' (' + currencyObject.rate + ')' for currencyObject in rates" ng-init="currencyName = 4.3"></select>
+  <h3 ng-cloak ng-click="displayCurrency()">We have {{printerList.length}} printers</h3>
+  <ul>
+    <li ng-repeat="printer in printerList">
+      <div>
+        <img ng-src="{{printer.image}}">
+        <span ng-show="printer.isCheap">CHEAP!!</span>
+      </div>
+      <div>
+        <a ng-href="/#/printer/{{printer.id}}" ng-class="printer.classes">{{printer.name}}</a>
+      </div>
+      <div ng-bind="printer.oldPrice"></div>
+      <div ng-class="{discounted: printer.oldPrice, 'not-available': !printer.remaining}">{{printer.newPrice}}</div>
+      <div>
+        <button class="btn btn-success" ng-class="{'btn-warning': !printer.remaining}" ng-bind="remainingText(printer.remaining)"></button>
+      </div>
+      <div ng-if="printer.remaining">
+        Only {{printer.remaining}} left!
+      </div>
+    </li>
+  </ul>
+  <div>
+    Name: <input ng-model="newPrinter.name" ng-blur="checkValidName()"><br >
+    Image: <input ng-model="newPrinter.image"><br >
+    Link: <input ng-model="newPrinter.link"><br >
+    Old price: <input ng-model="newPrinter.oldPrice" ng-keyup="verifyPriceIsNumber()"><br >
+    New price: <input ng-model="newPrinter.newPrice"><br >
+    Remaining: <input ng-model="newPrinter.remaining"><br >
+    Details: <textarea ng-model="newPrinter.details"></textarea><br >
+    <button class="btn btn-info" ng-click="addNewPrinter()">Add</button>
+  </div>
+</div>
