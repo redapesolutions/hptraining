@@ -9,10 +9,8 @@
  */
 angular.module('hpday1App')
   .service('pingerService', function ($rootScope, $timeout) {
-    var started = false;
     var startTime = new Date();
     this.start = function() {
-      started = true;
       this.ping();
     }.bind(this);
     this.ping = function() {
