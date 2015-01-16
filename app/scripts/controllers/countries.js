@@ -24,6 +24,7 @@ angular.module('hpday1App')
       var country = $scope.selectedCountry;
       $scope.countries[country] = _.without($scope.countries[country], city);
       $scope.cities = $scope.countries[$scope.selectedCountry];
+      $scope.selectedCountry = '';
       if($scope.countries[country].length === 0) {
         delete $scope.countries[country];
       }

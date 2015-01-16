@@ -43,6 +43,5 @@ angular
         redirectTo: '/'
       });
   })
-  .run(function() {
-
+  .run(function($rootScope, currencyEvents) {
   });

@@ -7,25 +7,27 @@
  * Controller of the hpday1App
  */
 angular.module('hpday1App')
-  .controller('MainCtrl', ['$scope', '$routeParams', 'cheapPrice', 'printersService', '$q', function ($scope, $routeParams, cheapPrice, printersService, $q) {
+  .controller('MainCtrl', ['$scope', 'currencyEvents', '$routeParams', 'cheapPrice', 'printersService', '$q', function ($scope, currencyEvents, $routeParams, cheapPrice, printersService, $q) {
+    $scope.$watch('printerList', _.after(2, function(nv, ov) {
+      console.log(nv, ov);
+    }), true);
+    var eventListener = $scope.$root.$on(currencyEvents.CURRENCY_CHANGE_UP, function(e, newrate) {
+      console.log(newrate, e);
+      _.each($scope.printerList, function(item) {
+        item.oldPrice = item.originalOldPrice / newrate;
+        item.newPrice = item.originalNewPrice / newrate;
+      });
+    });
+    $scope.$on('$destroy', function() {
+      eventListener();
+    });
+
     $scope.newPrinter = {};
     $scope.checkValidName = function() {
       if(!$scope.newPrinter.name) {
         window.alert('NAME please!');
       }
     }
-
-
-    var rates = [
-    {
-      name: 'EUR',
-      rate: 4.2
-    },{
-      name: 'USD',
-      rate: 3.5
-    }
-    ];
-    $scope.rates = rates;
 
     $scope.displayCurrency = function() {
       console.log($scope.currencyName);
@@ -54,6 +56,8 @@ angular.module('hpday1App')
       _.each(printers, function(item, i) {
         item.isCheap = item.newPrice < price;
         item.classes = {cheap: item.isCheap};
+        item.originalOldPrice = item.oldPrice;
+        item.originalNewPrice = item.newPrice;
       });
       $scope.printerList = printers;
     });

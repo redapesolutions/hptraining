@@ -1,6 +1,5 @@
 <div class="row marketing" ng-init="">
-  <select ng-model="currencyName" ng-options="currencyObject.rate as currencyObject.name + ' (' + currencyObject.rate + ')' for currencyObject in rates" ng-init="currencyName = 4.3"></select>
-  <h3 ng-cloak ng-click="displayCurrency()">We have {{printerList.length}} printers</h3>
+  <h3 ng-cloak >We have {{printerList.length}} printers</h3>
   <ul>
     <li ng-repeat="printer in printerList">
       <div>

@@ -26,4 +26,7 @@ angular.module('hpday1App.printers', [])
         });
       }
     }
+  }).value('currencyEvents', {
+    CURRENCY_CHANGE: 'currencychange',
+    CURRENCY_CHANGE_UP: 'currencychangeup'
   });

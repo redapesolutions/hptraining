@@ -22,15 +22,10 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">hpday1</h3>
+      <div class="header" ng-controller="CurrencyCtrl">
+        <select ng-model="selectedCurrency" ng-options="rate as currency for (currency, rate) in currencies"></select>
       </div>
-
+      <a href="#/">Home</a>
       <div ng-view=""></div>
 
       <div class="footer">
@@ -83,6 +78,7 @@
         <script src="scripts/services/channelsservice.js"></script>
         <script src="scripts/controllers/countries.js"></script>
         <script src="scripts/services/countriesservice.js"></script>
+        <script src="scripts/controllers/currency.js"></script>
         <!-- endbuild -->
 </body>
 </html>
