@@ -1,0 +1,4 @@
+<p>This is the ui view.</p>
+
+<input type="text" ng-model="selectedCity" placeholder="Type a city" typeahead="city for city in getCities($viewValue)" typeahead-on-select="citySelected($model)" typeahead-loading="loadingCities" class="form-control">
+Weather: {{weather}}

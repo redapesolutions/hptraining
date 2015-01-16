@@ -15,7 +15,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'hpday1App.printers',
-
+    'ui.bootstrap.typeahead'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,6 +38,10 @@ angular
       .when('/countries', {
         templateUrl: 'views/countries.html',
         controller: 'CountriesCtrl'
+      })
+      .when('/ui', {
+        templateUrl: 'views/ui.html',
+        controller: 'UiCtrl'
       })
       .otherwise({
         redirectTo: '/'

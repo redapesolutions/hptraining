@@ -12,11 +12,7 @@ angular.module('hpday1App')
       window.alert('You should ve bought a printer by now');
       return 20;
     });
-    $scope.$on('ping', function(e, duration) {
-      if(duration > 10000) {
-        singlePrompt();
-      }
-    });
+
     var eventListener = $scope.$root.$on(currencyEvents.CURRENCY_CHANGE_UP, function(e, newrate) {
       console.log(newrate, e);
       _.each($scope.printerList, function(item) {
