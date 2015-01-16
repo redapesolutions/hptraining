@@ -43,5 +43,6 @@ angular
         redirectTo: '/'
       });
   })
-  .run(function($rootScope, currencyEvents) {
+  .run(function(pingerService) {
+    pingerService.start();
   });

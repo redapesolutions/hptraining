@@ -9,6 +9,9 @@
  */
 angular.module('hpday1App')
   .controller('CurrencyCtrl', function ($scope, $rootScope, currencyEvents) {
+    $scope.$on('ping', function(e, duration) {
+      $scope.duration = duration / 1000;
+    });
     $scope.$watch('selectedCurrency', function(nv, ov) {
       if(nv !== ov){
         currencyChanged();

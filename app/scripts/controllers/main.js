@@ -8,9 +8,13 @@
  */
 angular.module('hpday1App')
   .controller('MainCtrl', ['$scope', 'currencyEvents', '$routeParams', 'cheapPrice', 'printersService', '$q', function ($scope, currencyEvents, $routeParams, cheapPrice, printersService, $q) {
-    $scope.$watch('printerList', _.after(2, function(nv, ov) {
-      console.log(nv, ov);
-    }), true);
+    $scope.$on('ping', function(e, duration) {
+      if(duration > 20000) {
+        _.once(function() {
+          window.alert('You should ve bought a printer by now');
+        });
+      }
+    });
     var eventListener = $scope.$root.$on(currencyEvents.CURRENCY_CHANGE_UP, function(e, newrate) {
       console.log(newrate, e);
       _.each($scope.printerList, function(item) {

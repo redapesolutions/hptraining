@@ -24,6 +24,7 @@
     <div class="container">
       <div class="header" ng-controller="CurrencyCtrl">
         <select ng-model="selectedCurrency" ng-options="rate as currency for (currency, rate) in currencies"></select>
+        You've been here for {{duration}} seconds
       </div>
       <a href="#/">Home</a>
       <div ng-view=""></div>
@@ -79,6 +80,7 @@
         <script src="scripts/controllers/countries.js"></script>
         <script src="scripts/services/countriesservice.js"></script>
         <script src="scripts/controllers/currency.js"></script>
+        <script src="scripts/services/pingerservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>
