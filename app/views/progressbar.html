@@ -1,0 +1,11 @@
+<p>This is the progressbar view.</p>
+<div>
+  Max: <input ng-model="max" ng-change="valueChanged()">
+</div>
+<div>
+  Value: <input ng-model="dynamic" ng-change="valueChanged()">
+</div>
+<div>
+  <!-- Refer to issue https://github.com/angular-ui/bootstrap/issues/1547 -->
+  <progressbar max="100" value="( dynamic * 100 ) / max" type="{{barType}}"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
+</div>

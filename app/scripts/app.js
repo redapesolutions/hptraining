@@ -18,6 +18,7 @@ angular
     'ui.bootstrap.typeahead',
     'ui.bootstrap.datepicker',
     'ui.bootstrap.timepicker',
+    'ui.bootstrap.progressbar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -48,6 +49,10 @@ angular
       .when('/datediff', {
         templateUrl: 'views/datediff.html',
         controller: 'DatediffCtrl'
+      })
+      .when('/progressbar', {
+        templateUrl: 'views/progressbar.html',
+        controller: 'ProgressbarCtrl'
       })
       .otherwise({
         redirectTo: '/'
