@@ -15,7 +15,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'hpday1App.printers',
-    'ui.bootstrap.typeahead'
+    'ui.bootstrap.typeahead',
+    'ui.bootstrap.datepicker',
+    'ui.bootstrap.timepicker',
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -42,6 +44,10 @@ angular
       .when('/ui', {
         templateUrl: 'views/ui.html',
         controller: 'UiCtrl'
+      })
+      .when('/datediff', {
+        templateUrl: 'views/datediff.html',
+        controller: 'DatediffCtrl'
       })
       .otherwise({
         redirectTo: '/'

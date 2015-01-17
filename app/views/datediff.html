@@ -1,0 +1,13 @@
+<p>This is the datediff view.</p>
+<div class="col-xs-6">
+  <datepicker ng-model="leftDate" ng-change="checkDiff()" show-weeks="true" class="well well-sm"></datepicker>
+  <timepicker ng-model="leftDate" ng-change="checkDiff()"></timepicker>
+
+</div>
+<div class="col-xs-6">
+  <datepicker ng-model="rightDate" ng-change="checkDiff()" show-weeks="true" class="well well-sm"></datepicker>
+  <timepicker ng-model="rightDate" ng-change="checkDiff()"></timepicker>
+</div>
+<div>
+  Difference: {{diff}} <select ng-model="unit" ng-change="checkDiff()" ng-options="c as c for c in units"></select>
+</div>
