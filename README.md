@@ -12,5 +12,5 @@ $ npm install
 $ bower install
 
 # Run a local version of the app
-$ grunt server
+$ grunt serve
 ```
