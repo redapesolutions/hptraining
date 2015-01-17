@@ -3,7 +3,7 @@
 ## Initial setup
 ```sh
 # Clone the source code
-$ git clone https://github.com/redapesolutions/astroCompanion.git && cd ./astroCompanion
+$ git clone https://github.com/redapesolutions/hptraining.git && cd ./hptraining
 
 # Install NPM dependencies
 $ npm install
