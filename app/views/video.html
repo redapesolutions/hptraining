@@ -1,0 +1,16 @@
+<div ng-controller="AdController" class="col-xs-1">
+  <img ng-src="adUrl" ng-show="adUrl" style="width: 100%;">
+</div>
+<div class="col-xs-9">
+  <div>
+    <youtube-video video-id="videoId" player="singlePlayer" style="width: 100%;"></youtube-video>
+  </div>
+  <div>
+    <button ng-click="singlePlayer.playVideo()">Play</button>
+  </div>
+</div>
+<div class="col-xs-2" ng-controller="VideoStateController">
+  <p>
+    Status: <span ng-bind="status"></span>
+  </p>
+</div>

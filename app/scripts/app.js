@@ -18,7 +18,8 @@ angular
     'ui.bootstrap.typeahead',
     'ui.bootstrap.datepicker',
     'ui.bootstrap.timepicker',
-    'ui.bootstrap.progressbar'
+    'ui.bootstrap.progressbar',
+    'youtube-embed'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -53,6 +54,10 @@ angular
       .when('/progressbar', {
         templateUrl: 'views/progressbar.html',
         controller: 'ProgressbarCtrl'
+      })
+      .when('/video', {
+        templateUrl: 'views/video.html',
+        controller: 'VideoCtrl'
       })
       .otherwise({
         redirectTo: '/'
